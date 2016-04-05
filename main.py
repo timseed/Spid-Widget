@@ -47,7 +47,7 @@ class Ui_MainWindow(object):
         print("Timer went off")
         item = QtWidgets.QListWidgetItem(self.listWidget)
         item_widget = GeoLocationWidget()
-        #item.setSizeHint(item_widget.sizeHint())
+        item.setSizeHint(item_widget.sizeHint())
         self.listWidget.addItem(item)
         self.listWidget.setItemWidget(item,item_widget)
 
