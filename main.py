@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from progress2 import progress2
-from GeoWidget import *
+from Spid import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -46,10 +46,14 @@ class Ui_MainWindow(object):
     def buttonClicked(self,value):
         print("Timer went off")
         item = QtWidgets.QListWidgetItem(self.listWidget)
-        item_widget = GeoLocationWidget()
+        item_widget = Spid()
+        item_widget.procDone.connect(self.slot_valchange)
         item.setSizeHint(item_widget.sizeHint())
         self.listWidget.addItem(item)
         self.listWidget.setItemWidget(item,item_widget)
+
+    def slot_valchange(self):
+        print("Main Here: A Value changed in a widget")
 
 if __name__ == "__main__":
     import sys

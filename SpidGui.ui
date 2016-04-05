@@ -40,5 +40,41 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Direction</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Frame</receiver>
+   <slot>slot1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>65</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>103</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Frame</receiver>
+   <slot>slot1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>146</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slot1()</slot>
+ </slots>
 </ui>
