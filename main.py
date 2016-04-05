@@ -7,7 +7,6 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from progress2 import progress2
 from Spid import *
 
 class Ui_MainWindow(object):
@@ -47,13 +46,21 @@ class Ui_MainWindow(object):
         print("Timer went off")
         item = QtWidgets.QListWidgetItem(self.listWidget)
         item_widget = Spid()
-        item_widget.procDone.connect(self.slot_valchange)
+        item_widget.MoveTo.connect(self.slot_valchange)
+        item_widget.Stop.connect(self.slot_Stop)
+        item_widget.Status.connect(self.slot_Status)
         item.setSizeHint(item_widget.sizeHint())
         self.listWidget.addItem(item)
         self.listWidget.setItemWidget(item,item_widget)
 
-    def slot_valchange(self):
-        print("Main Here: A Value changed in a widget")
+    def slot_valchange(self,data):
+        print("Main Here: A Value changed in a widget "+data)
+
+    def slot_Stop(self,data):
+        print("Main Here: STOP "+data)
+
+    def slot_Status(self,data):
+        print("Main Here: Status "+data)
 
 if __name__ == "__main__":
     import sys
